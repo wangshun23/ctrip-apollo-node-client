@@ -31,15 +31,14 @@ $ npm install ctrip-apollo --save
 
 ```js
 import ap from 'ctrip-apollo'
-const option = {
+
+ap({
   server,   //http://${ip}:${port}
   appId,
   namespace = 'application',
   cluster = 'default',
   ip
-}
-
-ap(option)
+})
 .then((apollo) => {
   const a = apollo.get('a')
   const {c, d} = apollo.get('c', 'd')
