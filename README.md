@@ -30,8 +30,9 @@ $ npm install ctrip-apollo --save
 ## Usage
 
 ```js
+import ap from 'ctrip-apollo'
 const option = {
-  server, http://${ip}:${port}
+  server,   //http://${ip}:${port}
   appId,
   namespace = 'application',
   cluster = 'default',

@@ -38,17 +38,17 @@ class Apollo extends EventEmitter{
   ready () {
     if(this._ready){
       return Promise.resolve()
-    }else{
-      return new Promise((resolve, reject) => {
-        this.once('ready', (e) => {
-          if(e){
-            reject(e)
-          }else{
-            resolve()
-          }
-        })
-      })
     }
+
+    return new Promise((resolve, reject) => {
+      this.once('ready', (e) => {
+        if(e){
+          reject(e)
+        }else{
+          resolve()
+        }
+      })
+    })
   }
 
   _getConfig () {
